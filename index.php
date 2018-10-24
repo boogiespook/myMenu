@@ -1,68 +1,108 @@
+<!DOCTYPE HTML>
+<!--
+	Intensify by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
 <html>
-<title>Monthly Menu Selector - Chrisj</title>
-<head>
-<link href="style.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="http://overpass-30e2.kxcdn.com/overpass.css"/>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<head>
+		<title>MyMenu</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="http://overpass-30e2.kxcdn.com/overpass.css"/>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="assets/js/Chart.js"></script>
 
-<script>
-  $( function() {
-    $( "#month" ).selectmenu(); 
- } );
- 
-$("#monthChange").change(function(){ $("#monthChange").submit() }) 
-  </script>
+	</head>
+	<body>
 
-</head>
+		<!-- Header -->
+			<header id="header">
+				<nav class="left">
+					<a href="#menu"><span>Menu</span></a>
+				</nav>
+				<a href="index.html" class="logo">MyMenu</a>
+				<nav class="right">
+					<a href="https://github.com/boogiespook/myMenu" target=_blank class="button alt">Github Repo</a>
+				</nav>
+			</header>
 
-<body>
+		<!-- Menu -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.php">Home</a></li>
+					<li><a href="https://github.com/boogiespook/myMenu" target=_blank>Git Repo</a></li>
+					<p>If you would like to submit more menus, please do a pull request from meals.json in the repo</p>
+				</ul>
+				<ul class="actions vertical">
+					<li><a href="#" class="button fit">Login</a></li>
+				</ul>
+			</nav>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="content">
+					
 <?php
-$curentYear= date("Y");
+$currentYear= date("Y");
+$monNum = date("n");
+$monFull = date("F");
+$monInt = 1;
+$months = array(
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July ',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+);
+$isVeg['veg'] = 0;
+$isVeg['meat'] = 0;
 
+
+function selectdCheck($value1,$value2)
+   {
+     if ($value1 == $value2) 
+     {
+      return 'selected="selected"';
+     } 
+   }
+
+   
 global $components;
-print "<table><tr><td><form action=index.php method=post id=monthChange>
-
-<select name=month id=month>
-<option value='January,1,$curentYear'>January</option>
-<option value='February,2,$curentYear'>February</option>
-<option value='March,3,$curentYear'>March</option>
-<option value='April,4,$curentYear'>April</option>
-<option value='May,5,$curentYear'>May</option>
-<option value='June,6,$curentYear'>June</option>
-<option value='July,7,$curentYear'>July</option>
-<option value='August,8,$curentYear'>August</option>
-<option value='September,9,$curentYear'>September</option>
-<option value='October,10,$curentYear'>October</option>
-<option value='November,11,$curentYear'>November</option>
-<option value='December,12,$curentYear'>December</option>
-</select></td>";
-
-print '<td><input type="submit" value="Get Menu!"></td></tr>';
+print "<table class=menu><tr><td class=menu><form action=index.php method=post id=monthChange>
+<select name=month id=month>";
+foreach ($months as $month) {
+	$str = selectdCheck($monFull,$month);
+	print "<option value='" . $month . "," . $monInt . "," . $currentYear . "' $str>$month</option>\n";
+	$monInt++;
+}
+print "</select>Select Month</td>";
+print '<td><input type="submit" value="Get Menu!"><br>Click to get a new menu</td></tr>';
 print "</table>";
-
 if (isset($_REQUEST['month'])) {
 $parts = explode(",",$_REQUEST['month']);
 #print_r($parts);
 
-echo '<h1>'.$parts[0].' ' . $curentYear . '</h1>';
+echo '<h1 class="logo">'.$parts[0] .' ' . $currentYear . '</h1>';
 echo draw_calendar($parts[1],$parts[2]);
 
-
-#print '<h2>Summary</h2><ul>';
-#arsort($components);
-#foreach ($components as $component => $val) {
-#print "<li>$component - $val</li>";
-#}
-#print "</ul>";
 } else {
-$mon1 = date("n");
-$mon2 = date("F");
-echo '<h1>'.$mon2 . ' '  . $curentYear . '</h1>';
-echo draw_calendar($mon1,$currentYear);
+
+echo '<h1 class="logo">'.$monFull . ' '  . $currentYear . '</h1>';
+echo draw_calendar($monNum,$currentYear);
 }
-echo '<p id="legal"> Designed by <a href="http://www.chrisj.co.uk">chrisj.co.uk 2018 &copy </a></p>';
+
 /* draws a calendar */
 function draw_calendar($month,$year){
 global $mealsArray;
@@ -140,9 +180,13 @@ shuffle($mealsArray);
 }
 
 
+
 function findDayMeal($dayNum) {
 global $mealsArray;
 global $components;
+global $isVeg;
+#$isVeg['veg'] = 0;
+#$isVeg['meat'] = 0;
 
 if (!preg_match("/^1$|^6$|^7$/",$dayNum)) {
 ## WeekDay
@@ -175,6 +219,13 @@ if ($mealSelection[1]['recipeBook']) {
 
 
 $components[$mealSelection[1]['mainComponent']]++;
+
+if ($mealSelection[1]['vegetarian'] == "Y") {
+	$isVeg['veg']++;
+} else {
+	$isVeg['meat']++;
+}
+
 return $str;
 } else {
 ## Weekend
@@ -206,6 +257,11 @@ if ($mealSelection[1]['recipeBook']) {
   }
 }
 
+if ($mealSelection[1]['vegetarian'] == "Y") {
+	$isVeg['veg']++;
+} else {
+	$isVeg['meat']++;
+}
 
 return $str;
 }
@@ -321,7 +377,89 @@ if ($vegetarian == "Y") {
 return $str;
 }
 
+$componentName = $componentNumber = $componentColour = array();
+ 
+foreach ($components as $componentPart => $value) {
+$color = 'rgb(' . rand(0,255) . ',' . rand(0,255) . ',' . rand(0, 255) . ')';	
+#print $componentPart . " has " . $value . "<br>";
+#array_push($dataPointsMain,array("label"=>$componentPart, "y"=>$value));
+array_push($componentName,$componentPart);
+array_push($componentNumber,$value);
+array_push($componentColour,$color);
+} 
+#var_dump($componentNumber);
 
+$namesForChart = json_encode($componentName);
+$numbersForChart = json_encode($componentNumber);
+$colorsForChart = json_encode($componentColour);
+global $namesForChart;
+#var_dump($namesForChart);
+#var_dump($numbersForChart);
 ?>
-</body>
+
+				</div>
+			</section>
+
+			<section id="three" class="wrapper">
+				<div class="inner flex flex-3">
+					<div class="flex-item box">
+						<div class="content">
+							<h3>Menu Breakdown</h3>
+<!-- 							<canvas id="pie-chart" ></canvas> -->
+<p>To Do - breakdown by major food type</p>
+						</div>
+					</div>
+
+					<div class="flex-item box">
+						<div class="content">
+							<h3>% of Vegetarian Meals</h3>
+<!-- 							<canvas id="pie-chart" ></canvas> -->
+<p>To Do</p>
+						</div>
+					</div>
+
+					<div class="flex-item box">
+						<div class="content">
+							<h3>Ingredients</h3>
+							<p>To Do - list of ingredients, broken down in to weeks.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					&copy; 2018 chrisj.co.uk <a href="http://www.chrisj.co.uk"></a>. Images by <a href="https://unsplash.com">Unsplash</a>.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+<script type="text/javascript" >
+new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
+    data: {
+      labels: <?php print $namesForChart; ?>,
+      datasets: [{
+        label: "Meal Breakdown",
+        backgroundColor: <?php print $colorsForChart; ?>,
+        data: <?php print $numbersForChart; ?>
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Breakdown of Meals'
+      }
+    }
+});
+
+</script>		
+	</body>
 </html>

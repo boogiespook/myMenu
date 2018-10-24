@@ -1,0 +1,89 @@
+/* body */
+body {
+font-family: 'overpass';
+font-size: 13px;
+color: #333333;
+vertical-align: center;
+}
+h1, h2, h3 {
+font-weight: normal;
+}
+
+.content {
+    max-width: 90%;
+    margin: auto;
+}
+
+h1 {
+color: #336699;
+text-align: center;
+font-size: 1.5em;
+
+}
+
+  fieldset {
+      border: 0;
+    }
+    label {
+      display: block;
+      margin: 0 0 0 0;
+    }
+    .overflow {
+      height: 200px;
+    }
+
+input[type=submit] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2 {
+        font-size: 1.4em;
+}
+
+h3 {
+        font-size: 1em;
+}
+
+td {
+    vertical-align: top;
+}
+
+table.menu {
+width: auto;
+background-color:whitesmoke;
+border-radius: 10px;
+}
+
+table.menu.td {
+background-color:whitesmoke;
+border-radius: 10px;
+}
+
+/* calendar */
+table.calendar	{ 
+border-left:1px solid #999; 
+background-color:white;
+}
+
+tr.calendar-row	{  }
+td.calendar-day	{ min-height:100px; font-size:11px; position:relative; } * html div.calendar-day { height:100px; }
+td.calendar-day-np	{ background:#eee; min-height:60px; } * html div.calendar-day-np { height:60px; }
+td.calendar-day-head { background:#99FFFF; font-weight:bold; text-align:center; width:120px; padding:5px; border-bottom:1px solid #999; border-top:1px solid #999; border-right:1px solid #999; }
+div.day-number		{ background:#336699; padding:5px; color:#fff; font-weight:bold; float:right; margin:-5px -5px 0 0; width:20px; text-align:center; }
+/* shared */
+td.calendar-day, td.calendar-day-np { width:200px; padding:5px; border-bottom:1px solid #999; border-right:1px solid #999; }
+
+#legal {
+        clear: both;
+        margin: 0;
+        padding: 10px 0;
+        text-align: center;
+        font-family: Tahoma, Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #525252;
+}
+
