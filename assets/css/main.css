@@ -2619,7 +2619,7 @@
 /* Wrapper */
 
 	.wrapper {
-		padding: 6em 0 4em 0;
+		padding: 1em 0 1em 0;
 	}
 
 		.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4, .wrapper h5 {
@@ -3172,7 +3172,7 @@
 			padding: 0;
 			text-align: center;
 			border-top: 1px solid rgba(255, 255, 255, 0.25);
-			padding: 2em 10em;
+			padding: 2em 2em;
 		}
 
 		@media screen and (max-width: 980px) {
