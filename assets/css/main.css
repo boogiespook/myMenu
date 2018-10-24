@@ -2318,7 +2318,7 @@
 	}
 
 	table {
-		margin: 0 0 2em 0;
+		margin: 0 0 0 0;
 		width: 100%;
 	}
 
@@ -2680,13 +2680,14 @@
 	}
 
 #dateTitle .logo {
-			font-family: "Pacifico", cursive;
+			font-family: "Overpass";
 }
 
 		#header .logo {
 			color: #f6755e;
-			font-family: "Pacifico", cursive;
-			font-size: 2.5em;
+			font-family: "Overpass";
+			font-size: 4em;
+			font-weight: bold;
 			letter-spacing: 2px;
 			margin-top: -5px;
 			text-decoration: none;
@@ -2929,8 +2930,8 @@
 	}
 
 #banner .logo {
-    font-family: "Pacifico", cursive;
-    font-size: 2
+    font-family: "Overpass";
+    font-size: 4
 }
 
 		#banner .content {
@@ -2943,15 +2944,14 @@
 
 		#banner h1 {
 			font-size: 3em;
+			font-weight: bold;
 			color: #f6755e;
-			line-height: 1em;
-			margin: 0 0 0.5em 0;
-			padding: 0;
 		}
 
 		#banner p {
 			font-size: 1.25em;
-			margin-bottom: 1.75em;
+			color: white;
+			font-weight: bold;
 		}
 
 		@media screen and (max-width: 1280px) {

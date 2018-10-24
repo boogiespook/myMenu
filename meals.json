@@ -4,7 +4,7 @@
     "day": "0",
     "recipeBook": "",
     "page": null,
-    "notes": "",
+    "notes": "Best served with some apple sauce.",
     "mainComponent": "Pork",
     "image": null,
     "vegetarian": "N"
@@ -14,7 +14,7 @@
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Can be made to be as mild or hot as you like!",
     "mainComponent": "Lamb",
     "image": null,
     "vegetarian": "N"
@@ -24,7 +24,7 @@
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Maybe use cod, haddock or hake",
     "mainComponent": "Fish",
     "image": null,
     "vegetarian": "Y"
@@ -34,7 +34,7 @@
     "day": "0",
     "recipeBook": "Ainsley Meals in Minutes",
     "page": "49",
-    "notes": null,
+    "notes": "Use a wide range of mushrooms such as morels, shiitake, oyster and good old button mushrooms.",
     "mainComponent": "Vegetables",
     "image": null,
     "vegetarian": "Y"
@@ -54,7 +54,7 @@
     "day": "6",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Kielbasa is a generic term for polish sausage and there a lot of types available.  Try to few to find which one is best for you.",
     "mainComponent": "Pork",
     "image": null,
     "vegetarian": "N"
@@ -84,7 +84,7 @@
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Personally, this works well with fresh petit pois",
     "mainComponent": "Chicken",
     "image": null,
     "vegetarian": "N"
@@ -104,7 +104,7 @@
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Goujons are deep-fried strips of chicken but you can also use fish if you prefer.",
     "mainComponent": "Chicken",
     "image": null,
     "vegetarian": "N"
@@ -114,7 +114,7 @@
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "A classic British dish which is basically a meat pie with a crust or topping of mashed potato.",
     "mainComponent": "Minced Beef",
     "image": null,
     "vegetarian": "N"
@@ -124,7 +124,7 @@
     "day": "6",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Staple British take-away food.  Good with curry sauce.",
     "mainComponent": "Fish",
     "image": null,
     "vegetarian": "Y"
@@ -134,7 +134,7 @@
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Other variations are red, yellow or jungle curry",
     "mainComponent": "Chicken",
     "image": null,
     "vegetarian": "N"
@@ -154,7 +154,7 @@
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Such a simple dish but can be seen as comfort food when you're short on time.",
     "mainComponent": "Vegetables",
     "image": null,
     "vegetarian": "Y"
@@ -164,13 +164,13 @@
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "You could change pork for beef, fish or vegetables",
     "mainComponent": "Pork",
     "image": null,
     "vegetarian": "N"
   },
   {
-    "description": "Splonka & Halloumi",
+    "description": "Polish Sausage & Halloumi",
     "day": "0",
     "recipeBook": null,
     "page": null,
@@ -194,7 +194,7 @@
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Could be lamb, beef, or pork meatballs.  For a slightly more healthy option, why not try minced chicken?",
     "mainComponent": "Minced Beef",
     "image": null,
     "vegetarian": "N"
@@ -204,7 +204,7 @@
     "day": "1",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Classic Sunday dinner involving a roasted joint of meat with gravy, stuffing and Yorkshire puddings.",
     "mainComponent": "Naughty",
     "image": "images/smile.jpg",
     "vegetarian": "N"
@@ -214,7 +214,7 @@
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Try adding some fresh mint in to the salad for an authentic Greek flavour.",
     "mainComponent": "Lamb",
     "image": null,
     "vegetarian": "N"
@@ -234,7 +234,7 @@
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "You can make your own tortillas but shop bought ones are as good and saves you time.",
     "mainComponent": "Minced Beef",
     "image": null,
     "vegetarian": "N"
@@ -314,7 +314,7 @@
     "day": "6",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Take-aways are always good! Mix up your choice and try something different each time.",
     "mainComponent": "Naughty",
     "image": "images/smile.jpg",
     "vegetarian": "N"
@@ -324,13 +324,13 @@
     "day": "7",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Could be anything but a) you're not making it and b) you're not doing the dishes afterwards!",
     "mainComponent": "Naughty",
     "image": "images/smile.jpg",
     "vegetarian": "N"
   },
   {
-    "description": "Gammon, Pinapple & Wedges",
+    "description": "Gammon, Pineapple & Wedges",
     "day": "0",
     "recipeBook": null,
     "page": null,
@@ -554,7 +554,7 @@
     "day": "0",
     "recipeBook": "AWT 100 Recipes",
     "page": "22",
-    "notes": null,
+    "notes": "Beef bourguignon or bœuf bourguignon, also called beef Burgundy, and bœuf à la Bourguignonne, is a beef stew braised in red wine, often red Burgundy, and beef broth, generally flavoured with carrots, onions, garlic, and a bouquet garni, and garnished with pearl onions, mushrooms, and bacon.",
     "mainComponent": "Beef",
     "image": null,
     "vegetarian": "N"
@@ -574,7 +574,7 @@
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Instead of sirloin steak, try a bavette (flank) steak for a change.  A lot of flavour and a slightly cheaper cut of meat.",
     "mainComponent": "Beef",
     "image": null,
     "vegetarian": "N"
@@ -584,7 +584,7 @@
     "day": "7",
     "recipeBook": "Chicken Cookbook",
     "page": "66",
-    "notes": null,
+    "notes": "If you can't find Camembert then you could use Brie.",
     "mainComponent": "Chicken",
     "image": null,
     "vegetarian": "N"

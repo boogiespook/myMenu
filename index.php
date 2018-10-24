@@ -11,12 +11,76 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/style.css" />
+		<script src="assets/js/Chart.js"></script>	
 		<link rel="stylesheet" type="text/css" href="http://overpass-30e2.kxcdn.com/overpass.css"/>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script src="assets/js/Chart.js"></script>
+		
+  <script>
+  $( function() {
+    $( document ).tooltip({
+      position: {
+        my: "center bottom-20",
+        at: "center top",
+        using: function( position, feedback ) {
+          $( this ).css( position );
+          $( "<div>" )
+            .addClass( feedback.vertical )
+            .addClass( feedback.horizontal )
+            .appendTo( this );
+        }
+      }
+    });
+  } );
+  </script> 
 
+  
+   <style>
+  .ui-tooltip, .arrow:after {
+    background: black;
+    border: 2px solid white;
+  }
+  .ui-tooltip {
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    font: 14px "Overpass";
+    box-shadow: 0 0 7px black;
+  }
+  .arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: 16px;
+  }
+  .arrow.top {
+    top: -16px;
+    bottom: auto;
+  }
+  .arrow.left {
+    left: 20%;
+  }
+  .arrow:after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 6px 5px 9px -9px black;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .arrow.top:after {
+    bottom: -20px;
+    top: auto;
+  }
+  </style>
 	</head>
 	<body>
 
@@ -46,7 +110,6 @@
 		<!-- Banner -->
 			<section id="banner">
 				<div class="content">
-					
 <?php
 $currentYear= date("Y");
 $monNum = date("n");
@@ -90,16 +153,17 @@ foreach ($months as $month) {
 print "</select>Select Month</td>";
 print '<td><input type="submit" value="Get Menu!"><br>Click to get a new menu</td></tr>';
 print "</table>";
+print "<p>Hover over a meal which is underlined for more information</p>";
 if (isset($_REQUEST['month'])) {
 $parts = explode(",",$_REQUEST['month']);
 #print_r($parts);
 
-echo '<h1 class="logo">'.$parts[0] .' ' . $currentYear . '</h1>';
+#echo '<h1 class="logo">'.$parts[0] .' ' . $currentYear . '</h1>';
 echo draw_calendar($parts[1],$parts[2]);
 
 } else {
 
-echo '<h1 class="logo">'.$monFull . ' '  . $currentYear . '</h1>';
+#echo '<h1 class="logo">'.$monFull . ' '  . $currentYear . '</h1>';
 echo draw_calendar($monNum,$currentYear);
 }
 
@@ -201,7 +265,13 @@ while ($found == '0') {
 }
 unset($mealsArray[$key]);
 # Check for book and page
-$str = "<b>" . $mealSelection[1]['description'] . "</b><br><center>";
+$tooltip = '';
+$closeTooptip = '';
+if ($mealSelection[1]['notes'] != null) {
+$tooltip = "<a href=# title='" . $mealSelection[1]['notes'] . "'>";
+$closeTooptip = "</a>";
+}
+$str = "<b>" . $tooltip . $mealSelection[1]['description'] . "</b>" . $closeTooptip . "<br><center>";
 #if ($mealSelection[1]['image']) {
 #$str .= "<br><center><img border=0 src='" . $mealSelection[1]['image'] . "'>";
 #}
@@ -225,6 +295,7 @@ if ($mealSelection[1]['vegetarian'] == "Y") {
 } else {
 	$isVeg['meat']++;
 }
+
 
 return $str;
 } else {
@@ -404,9 +475,9 @@ global $namesForChart;
 				<div class="inner flex flex-3">
 					<div class="flex-item box">
 						<div class="content">
-							<h3>Menu Breakdown</h3>
+							<h3>Key</h3>
 <!-- 							<canvas id="pie-chart" ></canvas> -->
-<p>To Do - breakdown by major food type</p>
+<p><img src="images/vegetarian.png"> Vegetarian</p>
 						</div>
 					</div>
 
@@ -420,9 +491,9 @@ global $namesForChart;
 
 					<div class="flex-item box">
 						<div class="content">
-							<h3>Ingredients</h3>
-							<p>To Do - list of ingredients, broken down in to weeks.</p>
-						</div>
+							<h3>Meal Breakdown</h3>
+							<p>To Do - breakdown by major food type</p>	
+    					</div>
 					</div>
 				</div>
 			</section>
@@ -435,31 +506,13 @@ global $namesForChart;
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-<script type="text/javascript" >
-new Chart(document.getElementById("pie-chart"), {
-    type: 'pie',
-    data: {
-      labels: <?php print $namesForChart; ?>,
-      datasets: [{
-        label: "Meal Breakdown",
-        backgroundColor: <?php print $colorsForChart; ?>,
-        data: <?php print $numbersForChart; ?>
-      }]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Breakdown of Meals'
-      }
-    }
-});
 
-</script>		
+
 	</body>
 </html>
