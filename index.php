@@ -103,6 +103,7 @@
 					<p>If you would like to submit more menus, please do a pull request from meals.json in the repo</p>
 					<li>Credits</li>
 					<p><a href='https://ubisafe.org'>https://ubisafe.org</a></p>
+					<p><div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></p?
 				</ul>
 				<ul class="actions vertical">
 					<li><a href="#" class="button fit">Login</a></li>
@@ -449,6 +450,10 @@ if (preg_match('/thai/i',$desc)) {
 
 if (preg_match('/polish/i',$desc)) {
  $str .= "<img src=images/polish.jpg>";
+}
+
+if (preg_match('/duck/i',$desc)) {
+ $str .= "<img src=images/duck.png>";
 }
 
 if (preg_match('/pasta|carbona|penne|spaghetti|arrabiat/i',$desc)) {
