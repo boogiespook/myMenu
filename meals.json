@@ -314,7 +314,7 @@
     "day": "6",
     "recipeBook": null,
     "page": null,
-    "notes": "Take-aways are always good! Mix up your choice and try something different each time.",
+    "notes": "Take-aways are always a good way to start the weekend! Mix up your choice and try something different each time.",
     "mainComponent": "Naughty",
     "image": "images/smile.jpg",
     "vegetarian": "N"
@@ -324,7 +324,7 @@
     "day": "7",
     "recipeBook": null,
     "page": null,
-    "notes": "Could be anything but a) you're not making it and b) you're not doing the dishes afterwards!",
+    "notes": "Could be anything but a) you are not making it and b) you are not not doing the dishes afterwards!",
     "mainComponent": "Naughty",
     "image": "images/smile.jpg",
     "vegetarian": "N"
@@ -574,7 +574,7 @@
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": "Instead of sirloin steak, try a bavette (flank) steak for a change.  A lot of flavour and a slightly cheaper cut of meat.",
+    "notes": "Instead of sirloin steak, try a bavette (flank) steak for a change.  A lot of flavour and they are a slightly cheaper cut of meat.",
     "mainComponent": "Beef",
     "image": null,
     "vegetarian": "N"
@@ -584,7 +584,7 @@
     "day": "7",
     "recipeBook": "Chicken Cookbook",
     "page": "66",
-    "notes": "If you can't find Camembert then you could use Brie.",
+    "notes": "If you cant find Camembert then you could use Brie.",
     "mainComponent": "Chicken",
     "image": null,
     "vegetarian": "N"

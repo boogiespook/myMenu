@@ -151,12 +151,11 @@ foreach ($months as $month) {
 	$monInt++;
 }
 print "</select>Select Month</td>";
-print '<td><input type="submit" value="Get Menu!"><br>Click to get a new menu</td></tr>';
+print '<td><input type="submit" value="Get Menu!"><br>Click to refresh menu</td></tr>';
 print "</table>";
 print "<p>Hover over a meal which is underlined for more information</p>";
 if (isset($_REQUEST['month'])) {
 $parts = explode(",",$_REQUEST['month']);
-#print_r($parts);
 
 #echo '<h1 class="logo">'.$parts[0] .' ' . $currentYear . '</h1>';
 echo draw_calendar($parts[1],$parts[2]);
@@ -170,7 +169,6 @@ echo draw_calendar($monNum,$currentYear);
 /* draws a calendar */
 function draw_calendar($month,$year){
 global $mealsArray;
-#global $selections;
 
 $mealsArray = array();
 $string = file_get_contents("meals.json");
@@ -313,7 +311,14 @@ if ($mealSelection[1]['day'] == $dayNum)  {
 unset($mealsArray[$nkey]);
 $components[$mealSelection[1]['mainComponent']]++;
 # Check for book and page
-$str = "<b>" . $mealSelection[1]['description'] . "</b><br><center>";
+$tooltip = '';
+$closeTooptip = '';
+if ($mealSelection[1]['notes'] != null) {
+$tooltip = "<a href=# title='" . $mealSelection[1]['notes'] . "'>";
+$closeTooptip = "</a>";
+}
+$str = "<b>" . $tooltip . $mealSelection[1]['description'] . "</b>" . $closeTooptip . "<br><center>";
+#$str = "<b>" . $mealSelection[1]['description'] . "</b><br><center>";
 if ($mealSelection[1]['image']) {
 $str .= "<br><center><img border=0 src='" . $mealSelection[1]['image'] . "'>";
 }
