@@ -101,6 +101,8 @@
 					<li><a href="index.php">Home</a></li>
 					<li><a href="https://github.com/boogiespook/myMenu" target=_blank>Git Repo</a></li>
 					<p>If you would like to submit more menus, please do a pull request from meals.json in the repo</p>
+					<li>Credits</li>
+					<p><a href='https://ubisafe.org'>https://ubisafe.org</a></p>
 				</ul>
 				<ul class="actions vertical">
 					<li><a href="#" class="button fit">Login</a></li>
@@ -389,6 +391,9 @@ if (preg_match('/malay/i',$desc)) {
  $str .= "<img src=images/maylasia.gif>";
 }
 
+if (preg_match('/turkey/i',$desc)) {
+ $str .= "<img src=images/turkey.png>";
+}
 
 if (preg_match('/tortilla/i',$desc)) {
  $str .= "<img src=images/mexico.gif>";
@@ -440,6 +445,10 @@ if (preg_match('/chilli/i',$desc)) {
 }
 if (preg_match('/thai/i',$desc)) {
  $str .= "<img src=images/thai.gif>";
+}
+
+if (preg_match('/polish/i',$desc)) {
+ $str .= "<img src=images/polish.jpg>";
 }
 
 if (preg_match('/pasta|carbona|penne|spaghetti|arrabiat/i',$desc)) {

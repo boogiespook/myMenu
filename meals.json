@@ -40,12 +40,12 @@
     "vegetarian": "Y"
   },
   {
-    "description": "Bangers & Mash",
+    "description": "Trinidad Pepperpot Beef",
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
-    "mainComponent": "Pork",
+    "notes": "Boneless beef simmered with stock, vinegar, Worcester sauce, chillies, sugar, parsley, peppercorns, cinnamon and thyme.",
+    "mainComponent": "Beef",
     "image": null,
     "vegetarian": "N"
   },
@@ -60,21 +60,21 @@
     "vegetarian": "N"
   },
   {
-    "description": "Chilli & Rice",
+    "description": "Pork with Chilli and Coconut",
     "day": "7",
     "recipeBook": null,
     "page": null,
-    "notes": null,
-    "mainComponent": "Minced Beef",
+    "notes": "Strips of pork in a dry marinade of ginger, chilli and curry powder.  Cooked with coconut, spring onion and red pepper",
+    "mainComponent": "Pork",
     "image": null,
     "vegetarian": "N"
   },
   {
-    "description": "Chicken Casserole",
+    "description": "Cheese and Garlic Stuffed Chicken",
     "day": "0",
     "recipeBook": null,
     "page": null,
-    "notes": null,
+    "notes": "Baked chicken breasts stuffed with soft cheese, onion, garlic, fresh tarragon, egg yolk and nutmeg.",
     "mainComponent": "Chicken",
     "image": null,
     "vegetarian": "N"
@@ -504,7 +504,7 @@
     "day": "0",
     "recipeBook": "Ainsley Gourmet Meals ",
     "page": "11",
-    "notes": null,
+    "notes": "Pieces of chicken marinated in sot sauce, lemon juice, garlic and spring onions.  Served with a peanut and coconut sauce.",
     "mainComponent": "Chicken",
     "image": null,
     "vegetarian": "N"
@@ -586,6 +586,216 @@
     "page": "66",
     "notes": "If you cant find Camembert then you could use Brie.",
     "mainComponent": "Chicken",
+    "image": null,
+    "vegetarian": "N"
+  },
+  {
+    "description": "Cheese and Vegetable Pie",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "A nice warming pie. Serve with boiled potatoes and grilled broccoli.",
+    "mainComponent": "Vegetables",
+    "image": null,
+    "vegetarian": "Y"
+  },
+  {
+    "description": "Mixed Bean Bake",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Try with kidney, aduki and butter beans for a mix of flavour and texture.",
+    "mainComponent": "Vegetables",
+    "image": null,
+    "vegetarian": "Y"
+  },
+  {
+    "description": "Cheese-topped Baked Aubergines",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Use low-fat Cheddar cheese or Mozzarella to lower the fat content.  The strong flavours of garlic and herbs will compensate for the lack of fat.",
+    "mainComponent": "Vegetables",
+    "image": null,
+    "vegetarian": "Y"
+  },
+  {
+    "description": "Mushroom Lasagne",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "A nice, healthier version than using beef mince.",
+    "mainComponent": "Vegetables",
+    "image": null,
+    "vegetarian": "Y"
+  },
+  {
+    "description": "Polenta with Grilled Vegetables",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Polenta is a dish of boiled cornmeal that was historically made from other grains. It may be served as a hot porridge, or it may be allowed to cool and solidify into a loaf that can be baked, fried, or grilled.  This recipe uses hard polenta",
+    "mainComponent": "Vegetables",
+    "image": null,
+    "vegetarian": "Y"
+  },
+  {
+    "description": "Mushroom Gougere",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "A gougère, in French cuisine, is a baked savory choux pastry made of choux dough mixed with cheese",
+    "mainComponent": "Vegetables",
+    "image": null,
+    "vegetarian": "Y"
+  },
+  {
+    "description": "Glamorgan Sausages",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Glamorgan sausage is a traditional Welsh vegetarian sausage for which the main ingredients are cheese, leeks and breadcrumbs.",
+    "mainComponent": "Vegetables",
+    "image": null,
+    "vegetarian": "Y"
+  },
+  {
+    "description": "Spiced fish with Coconut",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Sweet and spicy; Monkfish pieces lightly coated in flour, cooked with coconut milk, onions, coriander, cumin and turmeric",
+    "mainComponent": "Fish",
+    "image": null,
+    "vegetarian": "Y"
+  },
+  {
+    "description": "Salmon with Avocado",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Succulent salmon steaks baked with tarragon and served with a rich sauce of avocado, yoghurt and lime juice and zest.",
+    "mainComponent": "Fish",
+    "image": null,
+    "vegetarian": "Y"
+  },
+  {
+    "description": "Crispy-topped Fish Pie",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Cod poached in milk, then baked with prawns, leeks and broccoli.  Topped with white sauce and Gruyere cheese.",
+    "mainComponent": "Fish",
+    "image": null,
+    "vegetarian": "Y"
+  },
+  {
+    "description": "Koulibiac",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "A coulibiac is a type of Russian baked case of dough usually filled with salmon or sturgeon, rice or buckwheat, hard-boiled eggs, mushrooms, onions, and dill. The pie is baked in a pastry shell, usually of brioche or puff pastry.",
+    "mainComponent": "Fish",
+    "image": null,
+    "vegetarian": "Y"
+  },
+  {
+    "description": "Spiced fish with Coconut",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Sweet and spicy; monkfish pieces lightly coated in flour, cooked with coconut milk, onions, coriander, cumin and turmeric",
+    "mainComponent": "Fish",
+    "image": null,
+    "vegetarian": "Y"
+  },
+  {
+    "description": "Pork Pasticcio",
+    "day": "6",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Minced pork simmered with red wine, tomatoes, garlic, herbs and cinnamon.  Baked with macaroni and cheese custard.",
+    "mainComponent": "Pork",
+    "image": null,
+    "vegetarian": "N"
+  },
+  {
+    "description": "Blanquette of Lamb",
+    "day": "1",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Chunks of lamb simmered with onion, carrot, bay leaf, lemon juice and mushrooms.  Served with a cream and egg sauce.",
+    "mainComponent": "Lamb",
+    "image": null,
+    "vegetarian": "N"
+  },
+  {
+    "description": "Beef Bobotie",
+    "day": "1",
+    "recipeBook": null,
+    "page": null,
+    "notes": "A South African dish of minced beef baked with garlic, appricots, almonds, chutney, lemon and milk-soaked bread.",
+    "mainComponent": "Beef",
+    "image": null,
+    "vegetarian": "N"
+  },
+  {
+    "description": "Chicken Kebabs",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Pieces of chicken marinated in soy sauce, vinegar, oil and thyme. Grilled with green pepper, mushrooms and cherry tomatoes.",
+    "mainComponent": "Chicken",
+    "image": null,
+    "vegetarian": "N"
+  },
+  {
+    "description": "Turkey with Sourced Cream and Chives",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Strips of turkey breast in a bacon, mushroom and soured cream sauce.",
+    "mainComponent": "Turkey",
+    "image": null,
+    "vegetarian": "N"
+  },
+  {
+    "description": "Duck Breasts with Raspberry Sauce",
+    "day": "6",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Rich and Fruity; slices of grilled duck breast served with a sauce of raspberries, port and orange juice.",
+    "mainComponent": "Duck",
+    "image": null,
+    "vegetarian": "N"
+  },
+  {
+    "description": "Hot and Spicy Stir-Fried Duck",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Strips of duck marinated in soy sauce, vinegar, ginger, chilli and orange.  Stir-fried with vegetables and water chestnuts.",
+    "mainComponent": "Duck",
+    "image": null,
+    "vegetarian": "N"
+  },
+  {
+    "description": "Mustard Chicken",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Hot and creamy; strips of chicken with garlic in a cream sauce piquantly flavoured with mustard.",
+    "mainComponent": "Chicken",
+    "image": null,
+    "vegetarian": "N"
+  },
+  {
+    "description": "Turkey Mole",
+    "day": "0",
+    "recipeBook": null,
+    "page": null,
+    "notes": "Hot and spicy; turkey pieces cooked with a blended sauce of tomatoes, almonds, chocolate, chilli, cinnamon and cloves.",
+    "mainComponent": "Turkey",
     "image": null,
     "vegetarian": "N"
   }
