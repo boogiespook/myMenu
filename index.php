@@ -89,7 +89,7 @@
 				<nav class="left">
 					<a href="#menu"><span>Menu</span></a>
 				</nav>
-				<a href="index.html" class="logo">MyMenu</a>
+				<a href="index.php" class="logo">MyMenu</a>
 				<nav class="right">
 					<a href="https://github.com/boogiespook/myMenu" target=_blank class="button alt">Github Repo</a>
 				</nav>
