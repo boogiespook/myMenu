@@ -154,7 +154,30 @@ foreach ($months as $month) {
 	$monInt++;
 }
 print "</select>Select Month</td>";
+
+// Vegetarian menu restriction
+
+print '<td align="left"> <b> Meal Restrictions: </b> <br>
+<input type="radio" name="Restrictions" value="NoRestrictions" id="noRestrictions" checked >No Restrictions
+<br>
+<input type="radio" name="Restrictions" value="Vegetarian" id="vegetarian"> Vegetarian
+</td>';
+
 print '<td><input type="submit" value="Get Menu!"><br>Click to refresh menu</td></tr>';
+
+global $vegetarianActive;
+
+// Restrictions Request
+
+if(isset($_REQUEST['Restrictions'])) {
+    if($_REQUEST['Restrictions'] == 'NoRestrictions') {
+        $vegetarianActive = false;
+	} 
+	if($_REQUEST['Restrictions'] == 'Vegetarian') {
+        $vegetarianActive = true;
+    }
+}
+
 print "</table>";
 print "<p>Hover over a meal which is underlined for more information</p>";
 if (isset($_REQUEST['month'])) {
@@ -250,6 +273,7 @@ function findDayMeal($dayNum) {
 global $mealsArray;
 global $components;
 global $isVeg;
+global $vegetarianActive;
 #$isVeg['veg'] = 0;
 #$isVeg['meat'] = 0;
 
@@ -257,14 +281,26 @@ if (!preg_match("/^1$|^6$|^7$/",$dayNum)) {
 ## WeekDay
 $found = '0';
 while ($found == '0') {
-  $mealSelection = array($key = array_rand($mealsArray), $mealsArray[$key]);
-  if (($mealSelection[1]['day']) || (!$mealSelection[1]['description']) ) {
-    $mealSelection = array($key = array_rand($mealsArray), $mealsArray[$key]);
-    } else {
-    $found = '1';
-	}
+$mealSelection = array($key = array_rand($mealsArray), $mealsArray[$key]);
+
+/* WeekDay 'No Restrictions' Check */
+if ((($mealSelection[1]['day']) || (!$mealSelection[1]['description'])) && $vegetarianActive == false ) {
+	continue;
+	} elseif($vegetarianActive == false) {
+		unset($mealsArray[$key]);   
+		$found = '1';
+}   
+
+/* WeekDay 'Vegetarian' Check */
+if ((($mealSelection[1]['day']) || (!$mealSelection[1]['description'])) && $vegetarianActive == true && $mealSelection[1]['vegetarian'] == 'N' ) {
+	continue;
+	} elseif($vegetarianActive == true && $mealSelection[1]['vegetarian'] == 'Y') {
+		# unset($mealsArray[$key]);
+		/* Note: Un-comment above line when we hit 31+ vegetarian items in JSON to create a vegetarian menu with no duplicates */
+		$found = '1';
 }
-unset($mealsArray[$key]);
+}  
+
 # Check for book and page
 $tooltip = '';
 $closeTooptip = '';
@@ -289,7 +325,9 @@ if ($mealSelection[1]['recipeBook']) {
 }
 
 
-$components[$mealSelection[1]['mainComponent']]++;
+if(isset($_POST['mainComponent'])){
+	$components[$mealSelection[1]['mainComponent']]++;
+}
 
 if ($mealSelection[1]['vegetarian'] == "Y") {
 	$isVeg['veg']++;
@@ -303,16 +341,38 @@ return $str;
 ## Weekend
 $found = 0;
 $mealSelection = array($nkey = array_rand($mealsArray), $mealsArray[$nkey]);
-while ($found < 1) {
-if ($mealSelection[1]['day'] == $dayNum)  {
-      $found++;
-	  } else {
-	  $mealSelection = array($nkey = array_rand($mealsArray), $mealsArray[$nkey]);
-	  }
-  }
 
-unset($mealsArray[$nkey]);
-$components[$mealSelection[1]['mainComponent']]++;
+/* Weekend 'No Restrictions' Check */
+if($vegetarianActive == false){
+	while ($found < 1) {
+		if ($mealSelection[1]['day'] == $dayNum)  {
+			unset($mealsArray[$nkey]);
+			$found++;
+		} else {
+			$mealSelection = array($nkey = array_rand($mealsArray), $mealsArray[$nkey]);
+		}
+	}
+}
+
+/* Weekend 'Vegetarian' Check */
+/* Note: at this point in time, we have no Vegetarian items with property 'day' = 1.
+	Once we populate JSON with more vegetarian items with 'day' properties of 1,6 & 7, we can use a 'day' condition like 'No Restrictions' */
+if($vegetarianActive == true){
+	while ($found < 1) {
+		if ($mealSelection[1]['vegetarian'] == 'Y')  {
+			# unset($mealsArray[$key]);
+			/* Note: Un-comment above line when we hit 31+ vegetarian items in JSON to create a vegetarian menu with no duplicates */
+			$found++;
+		} else {
+			$mealSelection = array($nkey = array_rand($mealsArray), $mealsArray[$nkey]);
+		}
+	}
+}
+
+if(isset($_POST['mainComponent'])){
+	$components[$mealSelection[1]['mainComponent']]++;
+}
+
 # Check for book and page
 $tooltip = '';
 $closeTooptip = '';
@@ -468,16 +528,18 @@ return $str;
 }
 
 $componentName = $componentNumber = $componentColour = array();
- 
-foreach ($components as $componentPart => $value) {
-$color = 'rgb(' . rand(0,255) . ',' . rand(0,255) . ',' . rand(0, 255) . ')';	
-#print $componentPart . " has " . $value . "<br>";
-#array_push($dataPointsMain,array("label"=>$componentPart, "y"=>$value));
-array_push($componentName,$componentPart);
-array_push($componentNumber,$value);
-array_push($componentColour,$color);
-} 
-#var_dump($componentNumber);
+
+if (is_array($componentName) and is_array($componentNumber) and ($componentColour)) {
+	foreach ($components as $componentPart => $value) {
+	$color = 'rgb(' . rand(0,255) . ',' . rand(0,255) . ',' . rand(0, 255) . ')';	
+	#print $componentPart . " has " . $value . "<br>";
+	#array_push($dataPointsMain,array("label"=>$componentPart, "y"=>$value));
+	array_push($componentName,$componentPart);
+	array_push($componentNumber,$value);
+	array_push($componentColour,$color);
+	} 
+	#var_dump($componentNumber);
+}
 
 $namesForChart = json_encode($componentName);
 $numbersForChart = json_encode($componentNumber);
