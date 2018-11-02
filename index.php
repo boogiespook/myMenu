@@ -346,7 +346,7 @@ $mealSelection = array($nkey = array_rand($mealsArray), $mealsArray[$nkey]);
 if($vegetarianActive == false){
 	while ($found < 1) {
 		if ($mealSelection[1]['day'] == $dayNum)  {
-			unset($mealsArray[$nkey]); // turns mealsArray into null
+			unset($mealsArray[$nkey]);
 			$found++;
 		} else {
 			$mealSelection = array($nkey = array_rand($mealsArray), $mealsArray[$nkey]);
