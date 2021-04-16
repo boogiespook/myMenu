@@ -2,7 +2,7 @@
 
 <b>Description</b>
 
-A Simple web app to create a random monthly menu.
+A Simple web app to create a random monthly menu.  Update
 
 <b>Setup</b>
  - Ensure you have php and httpd is installed and running
