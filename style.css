@@ -18,10 +18,8 @@ h1 {
 color: #336699;
 text-align: center;
 font-size: 1.5em;
-
+font-weight: bold;
 }
-
-
 
   fieldset {
       border: 0;
@@ -38,6 +36,7 @@ input[type=submit] {
     background-color: #4CAF50;
     border: none;
     color: white;
+    padding: 10px 32px;
     text-decoration: none;
     cursor: pointer;
 }
@@ -54,21 +53,9 @@ td {
     vertical-align: top;
 }
 
-table.menu {
-width: auto;
-background-color:whitesmoke;
-border-radius: 10px;
-}
-
-table.menu.td {
-background-color:whitesmoke;
-border-radius: 10px;
-}
-
 /* calendar */
 table.calendar	{ 
 border-left:1px solid #999; 
-background-color:white;
 }
 
 tr.calendar-row	{  }
@@ -89,50 +76,3 @@ td.calendar-day, td.calendar-day-np { width:200px; padding:5px; border-bottom:1p
         color: #525252;
 }
 
-  .ui-tooltip, .arrow:after {
-    background: black;
-    border: 2px solid white;
-  }
-  .ui-tooltip {
-    padding: 10px 20px;
-    color: white;
-    border-radius: 20px;
-    font: 14px "Overpass";
-    box-shadow: 0 0 7px black;
-  }
-  .arrow {
-    width: 70px;
-    height: 16px;
-    overflow: hidden;
-    position: absolute;
-    left: 50%;
-    margin-left: -35px;
-    bottom: 16px;
-  }
-  .arrow.top {
-    top: -16px;
-    bottom: auto;
-  }
-  .arrow.left {
-    left: 20%;
-  }
-  .arrow:after {
-    content: "";
-    position: absolute;
-    left: 20px;
-    top: -20px;
-    width: 25px;
-    height: 25px;
-    box-shadow: 6px 5px 9px -9px black;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-  .arrow.top:after {
-    bottom: -20px;
-    top: auto;
-  }
-  
-  
-  
-  
